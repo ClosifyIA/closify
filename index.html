@@ -1358,19 +1358,11 @@
         // Configuration Stripe
         const stripe = Stripe('pk_test_51RrdffRwCNzviwshvmlMjfrYB4b4u74Ev09uhqSRGlOCYCpfOqre1DumGSymXOAc51AKaYVKwNWTBJOMnaFh9BFH00mgRLj169');
 
-        // Price IDs pour chaque offre
+        // Price IDs pour l'offre Premium (test)
         const priceIds = {
-            lite: {
-                installation: 'price_1Rre0vRwCNzviwshXlxcBggs', // 200€
-                monthly: 'price_1Rrdz9RwCNzviwshDXGVjPPq'     // 79€/mois
-            },
             premium: {
-                installation: 'price_1Rre0vRwCNzviwshXlxcBggs', // 400€
-                monthly: 'price_1Rrdz9RwCNzviwshDXGVjPPq'     // 149€/mois
-            },
-            ultra: {
-                installation: 'price_1Rre0vRwCNzviwshXlxcBggs', // 700€
-                monthly: 'price_1Rrdz9RwCNzviwshDXGVjPPq'     // 299€/mois
+                installation: 'price_1Rre0vRwCNzviwshXlxcBggs', // 400€ installation
+                monthly: 'price_1Rrdz9RwCNzviwshDXGVjPPq'     // 149€/mois abonnement
             }
         };
 
@@ -1385,61 +1377,62 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Fonction de paiement Stripe
+        // Fonction de paiement Stripe (Premium seulement pour test)
         async function processPayment(offer, formData) {
             try {
+                // Vérifier que l'offre Premium est disponible
+                if (offer !== 'premium') {
+                    alert('Seule l\'offre Premium est disponible pour le moment. Contactez-nous pour les autres offres.');
+                    return;
+                }
+
                 // Afficher un loader
                 const submitBtn = document.querySelector(`#${offer}Modal .submit-btn`);
                 const originalText = submitBtn.textContent;
                 submitBtn.textContent = '🔄 Redirection vers le paiement...';
                 submitBtn.disabled = true;
 
-                // Préparer les items pour Stripe
+                // Préparer les items pour Stripe (Premium uniquement)
                 const lineItems = [
                     {
-                        price: priceIds[offer].installation,
+                        price: priceIds.premium.installation, // 400€ installation
                         quantity: 1
                     },
                     {
-                        price: priceIds[offer].monthly,
+                        price: priceIds.premium.monthly, // 149€/mois abonnement
                         quantity: 1
                     }
                 ];
 
-                // Préparer les métadonnées client
-                const customerData = {
-                    customer_email: formData.get('email'),
-                    metadata: {
-                        nom: formData.get('nom') || '',
-                        entreprise: formData.get('entreprise') || '',
-                        telephone: formData.get('telephone') || '',
-                        secteur: formData.get('secteur') || '',
-                        offre: formData.get('offre') || '',
-                        site_web: formData.get('site_web') || '',
-                        objectifs: formData.get('objectifs') || ''
-                    }
-                };
+                console.log('Redirection vers Stripe avec:', lineItems);
 
                 // Redirection vers Stripe Checkout
                 const { error } = await stripe.redirectToCheckout({
                     lineItems: lineItems,
                     mode: 'subscription',
-                    successUrl: window.location.origin + '/success.html?session_id={CHECKOUT_SESSION_ID}',
-                    cancelUrl: window.location.origin + '/cancel.html',
-                    ...customerData
+                    successUrl: window.location.origin + '/?success=true',
+                    cancelUrl: window.location.origin + '/?cancel=true',
+                    customerEmail: formData.get('email'),
+                    metadata: {
+                        nom: formData.get('nom') || '',
+                        entreprise: formData.get('entreprise') || '',
+                        telephone: formData.get('telephone') || '',
+                        secteur: formData.get('secteur') || '',
+                        offre: 'Premium - 149€/mois + 400€ installation'
+                    }
                 });
 
                 if (error) {
                     console.error('Erreur Stripe:', error);
-                    alert('Erreur lors du paiement. Veuillez réessayer.');
+                    alert('Erreur lors du paiement: ' + error.message);
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
                 }
             } catch (error) {
-                console.error('Erreur:', error);
-                alert('Une erreur est survenue. Veuillez réessayer.');
+                console.error('Erreur générale:', error);
+                alert('Une erreur est survenue: ' + error.message);
                 const submitBtn = document.querySelector(`#${offer}Modal .submit-btn`);
-                submitBtn.textContent = submitBtn.textContent.replace('🔄 Redirection vers le paiement...', 'Démarrer maintenant');
+                submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             }
         }
