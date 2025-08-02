@@ -1412,14 +1412,7 @@
                     mode: 'subscription',
                     successUrl: window.location.origin + '/?success=true',
                     cancelUrl: window.location.origin + '/?cancel=true',
-                    customerEmail: formData.get('email'),
-                    metadata: {
-                        nom: formData.get('nom') || '',
-                        entreprise: formData.get('entreprise') || '',
-                        telephone: formData.get('telephone') || '',
-                        secteur: formData.get('secteur') || '',
-                        offre: 'Premium - 149€/mois + 400€ installation'
-                    }
+                    customerEmail: formData.get('email')
                 });
 
                 if (error) {
