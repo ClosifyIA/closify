@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Closify - Agence IA Automatisation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://js.stripe.com/v3/"></script>
     <style>
         * {
             margin: 0;
@@ -21,7 +20,6 @@
             overflow-x: hidden;
         }
 
-        /* Update colors to match logo */
         :root {
             --primary-blue: #1CBCCF;
             --primary-blue-dark: #16A5B8;
@@ -54,19 +52,6 @@
             font-weight: 700;
             color: #1CBCCF;
             letter-spacing: -0.02em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-        }
-
-        .logo svg {
-            height: 40px;
-            width: auto;
         }
 
         .nav-links {
@@ -196,17 +181,9 @@
             animation: float 3s ease-in-out infinite;
         }
 
-        .dashboard-card:nth-child(2) {
-            animation-delay: 0.5s;
-        }
-
-        .dashboard-card:nth-child(3) {
-            animation-delay: 1s;
-        }
-
-        .dashboard-card:nth-child(4) {
-            animation-delay: 1.5s;
-        }
+        .dashboard-card:nth-child(2) { animation-delay: 0.5s; }
+        .dashboard-card:nth-child(3) { animation-delay: 1s; }
+        .dashboard-card:nth-child(4) { animation-delay: 1.5s; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
@@ -426,6 +403,77 @@
             box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
         }
 
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 0;
+            background: #111;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #1CBCCF;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #1CBCCF;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
         /* Modal Styles */
         .modal {
             display: none;
@@ -535,78 +583,50 @@
             color: #ff6b6b;
         }
 
-        /* CTA Section */
-        .cta-section {
-            padding: 8rem 0;
-            background: #111;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #fff;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Footer */
-        .footer {
-            background: #000;
-            padding: 4rem 0 2rem;
-            border-top: 1px solid #333;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        .checkbox-group {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
         }
 
-        .footer-section h3 {
-            color: #1CBCCF;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .footer-section ul {
-            list-style: none;
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin: 0;
         }
 
-        .footer-section ul li {
-            margin-bottom: 0.8rem;
+        .checkbox-item label {
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
         }
 
-        .footer-section ul li a {
+        .info-section {
+            background: linear-gradient(135deg, #ff6b6b20, #ff8a8a20);
+            border: 1px solid #ff6b6b40;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .info-section h4 {
+            color: #ff6b6b;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .info-section p {
             color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
-        .footer-section ul li a:hover {
-            color: #1CBCCF;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #333;
-            color: #999;
-        }
-
-        /* Loading spinner */
         .loading-spinner {
             display: none;
             border: 4px solid #333;
@@ -686,7 +706,6 @@
             }
         }
 
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
@@ -696,9 +715,7 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <div class="logo">
-                <span>Closify</span>
-            </div>
+            <div class="logo">Closify</div>
             <ul class="nav-links">
                 <li><a href="#features">Fonctionnalités</a></li>
                 <li><a href="#pricing">Tarifs</a></li>
@@ -926,77 +943,7 @@
         </div>
     </footer>
 
-    <!-- Modals pour les formulaires avec intégration Stripe -->
-    <!-- Modal Lite -->
-    <div id="liteModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('liteModal')">&times;</span>
-            <h2 class="form-title">Offre Lite - 79€/mois</h2>
-            <p class="form-subtitle">Commencez votre automatisation avec notre formule d'entrée</p>
-            
-            <div class="payment-info">
-                <h4><i class="fas fa-credit-card"></i> Paiement sécurisé par Stripe</h4>
-                <p>Après validation de vos informations, vous serez redirigé vers notre page de paiement sécurisée</p>
-            </div>
-
-            <form id="liteForm">
-                <input type="hidden" name="plan" value="lite">
-                <input type="hidden" name="price" value="7900"> <!-- Prix en centimes pour Stripe -->
-                <input type="hidden" name="setup_fee" value="20000"> <!-- Frais d'installation en centimes -->
-                
-                <div class="form-group">
-                    <label for="nom_lite">Nom complet <span class="required">*</span></label>
-                    <input type="text" id="nom_lite" name="nom" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email_lite">Email professionnel <span class="required">*</span></label>
-                    <input type="email" id="email_lite" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telephone_lite">Téléphone <span class="required">*</span></label>
-                    <input type="tel" id="telephone_lite" name="telephone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="entreprise_lite">Nom de l'entreprise <span class="required">*</span></label>
-                    <input type="text" id="entreprise_lite" name="entreprise" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="secteur_lite">Secteur d'activité <span class="required">*</span></label>
-                    <select id="secteur_lite" name="secteur" required>
-                        <option value="">Sélectionnez votre secteur</option>
-                        <option value="coiffeur">Coiffeur/Esthétique</option>
-                        <option value="restaurant">Restaurant/Café</option>
-                        <option value="commerce">Commerce de détail</option>
-                        <option value="service">Services professionnels</option>
-                        <option value="sante">Santé/Bien-être</option>
-                        <option value="immobilier">Immobilier</option>
-                        <option value="autre">Autre</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="site_web_lite">Site web actuel (si vous en avez un)</label>
-                    <input type="url" id="site_web_lite" name="site_web" placeholder="https://votre-site.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="objectifs_lite">Quels sont vos principaux objectifs ? <span class="required">*</span></label>
-                    <textarea id="objectifs_lite" name="objectifs" rows="3" placeholder="Ex: Automatiser la prise de RDV, améliorer la qualification des leads..." required></textarea>
-                </div>
-                
-                <div class="loading-spinner" id="liteSpinner"></div>
-                <button type="submit" class="submit-btn" id="liteSubmitBtn">
-                    <i class="fas fa-lock"></i> Procéder au paiement sécurisé
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal Premium -->
+    <!-- Modal Premium (test) -->
     <div id="premiumModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('premiumModal')">&times;</span>
@@ -1008,60 +955,111 @@
                 <p>Après validation de vos informations, vous serez redirigé vers notre page de paiement sécurisée</p>
             </div>
 
-            <form id="premiumForm">
-                <input type="hidden" name="plan" value="premium">
-                <input type="hidden" name="price" value="14900"> <!-- Prix en centimes pour Stripe -->
-                <input type="hidden" name="setup_fee" value="40000"> <!-- Frais d'installation en centimes -->
-                
+            <form id="premiumForm" action="https://api.leadconnectorhq.com/widget/form/o9jiH3ErdydjmU2XsA27" method="POST">
                 <div class="form-group">
-                    <label for="nom_premium">Nom complet <span class="required">*</span></label>
-                    <input type="text" id="nom_premium" name="nom" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email_premium">Email professionnel <span class="required">*</span></label>
-                    <input type="email" id="email_premium" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telephone_premium">Téléphone <span class="required">*</span></label>
-                    <input type="tel" id="telephone_premium" name="telephone" required>
+                    <label for="nom_premium">Nom & Prénom <span class="required">*</span></label>
+                    <input type="text" id="nom_premium" name="nom" required placeholder="Jean Dupont">
                 </div>
                 
                 <div class="form-group">
                     <label for="entreprise_premium">Nom de l'entreprise <span class="required">*</span></label>
-                    <input type="text" id="entreprise_premium" name="entreprise" required>
+                    <input type="text" id="entreprise_premium" name="entreprise" required placeholder="Mon Restaurant">
                 </div>
                 
                 <div class="form-group">
-                    <label for="secteur_premium">Secteur d'activité <span class="required">*</span></label>
-                    <select id="secteur_premium" name="secteur" required>
-                        <option value="">Sélectionnez votre secteur</option>
-                        <option value="coiffeur">Coiffeur/Esthétique</option>
-                        <option value="restaurant">Restaurant/Café</option>
-                        <option value="commerce">Commerce de détail</option>
-                        <option value="service">Services professionnels</option>
-                        <option value="sante">Santé/Bien-être</option>
-                        <option value="immobilier">Immobilier</option>
-                        <option value="agence">Agence/Marketing</option>
-                        <option value="consultant">Consultant/Coach</option>
-                        <option value="autre">Autre</option>
-                    </select>
+                    <label for="email_premium">Adresse email <span class="required">*</span></label>
+                    <input type="email" id="email_premium" name="email" required placeholder="contact@monentreprise.com">
                 </div>
                 
                 <div class="form-group">
-                    <label for="site_web_premium">Site web actuel</label>
-                    <input type="url" id="site_web_premium" name="site_web" placeholder="https://votre-site.com">
+                    <label for="telephone_premium">Numéro de téléphone <span class="required">*</span></label>
+                    <input type="tel" id="telephone_premium" name="telephone" required placeholder="06 12 34 56 78">
                 </div>
                 
                 <div class="form-group">
-                    <label for="services_premium">Quels services/produits proposez-vous ? <span class="required">*</span></label>
-                    <textarea id="services_premium" name="services" rows="3" placeholder="Décrivez vos principaux services ou produits..." required></textarea>
+                    <label for="site_web_premium">Site internet</label>
+                    <input type="url" id="site_web_premium" name="site_web" placeholder="https://monentreprise.com">
                 </div>
                 
                 <div class="form-group">
-                    <label for="objectifs_premium">Objectifs principaux <span class="required">*</span></label>
-                    <textarea id="objectifs_premium" name="objectifs" rows="3" placeholder="Automatisation souhaitée, problèmes à résoudre..." required></textarea>
+                    <label>Canaux à connecter <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="whatsapp_premium" name="canaux" value="WhatsApp">
+                            <label for="whatsapp_premium">WhatsApp</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sms_premium" name="canaux" value="SMS">
+                            <label for="sms_premium">SMS</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="email_canal_premium" name="canaux" value="Email">
+                            <label for="email_canal_premium">Email</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="messenger_premium" name="canaux" value="Facebook/Messenger">
+                            <label for="messenger_premium">Facebook/Messenger</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="instagram_premium" name="canaux" value="Instagram">
+                            <label for="instagram_premium">Instagram</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="site_canal_premium" name="canaux" value="Site internet">
+                            <label for="site_canal_premium">Site internet</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="google_premium" name="canaux" value="Google Business">
+                            <label for="google_premium">Google Business</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="activite_premium">Décrivez votre activité <span class="required">*</span></label>
+                    <textarea id="activite_premium" name="activite" rows="3" required placeholder="Type de business, spécialité, clientèle cible..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Types de messages que l'IA devra gérer <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="rdv_premium" name="messages_ia" value="Prise de rendez-vous">
+                            <label for="rdv_premium">Prise de rendez-vous</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="horaires_premium" name="messages_ia" value="Informations horaires">
+                            <label for="horaires_premium">Informations horaires</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="presentation_premium" name="messages_ia" value="Présentation de l'offre">
+                            <label for="presentation_premium">Présentation de l'offre</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="demandes_premium" name="messages_ia" value="Traitement demandes clients">
+                            <label for="demandes_premium">Traitement demandes clients</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="horaires_premium">Quels sont vos horaires d'ouverture ? <span class="required">*</span></label>
+                    <textarea id="horaires_premium" name="horaires" rows="2" required placeholder="Lun-Ven: 9h-18h, Sam: 9h-16h, Dim: Fermé"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="interdictions_premium">Y a-t-il des choses que l'IA ne doit pas dire ou pas faire ?</label>
+                    <textarea id="interdictions_premium" name="interdictions" rows="2" placeholder="Ex: Ne pas donner de prix par téléphone, ne pas prendre de RDV le dimanche..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="objections_premium">Quels sont les messages types ou objections que vous recevez souvent ?</label>
+                    <textarea id="objections_premium" name="objections" rows="3" placeholder="Ex: 'C'est trop cher', 'Vous êtes où ?', 'Vous faites quoi exactement ?'..."></textarea>
+                </div>
+                
+                <div class="info-section">
+                    <h4><i class="fas fa-info-circle"></i> Accès aux comptes nécessaires</h4>
+                    <p>Après votre paiement, vous recevrez un email sécurisé pour nous transmettre les accès à vos comptes (WhatsApp Business, Facebook, etc.). Ces informations sont indispensables pour connecter vos canaux à votre assistant IA.</p>
                 </div>
                 
                 <div class="loading-spinner" id="premiumSpinner"></div>
@@ -1072,87 +1070,14 @@
         </div>
     </div>
 
-    <!-- Modal Ultra -->
-    <div id="ultraModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('ultraModal')">&times;</span>
-            <h2 class="form-title">Offre Ultra - 299€/mois</h2>
-            <p class="form-subtitle">Solution enterprise avec accompagnement personnalisé</p>
-            
-            <div class="payment-info">
-                <h4><i class="fas fa-credit-card"></i> Paiement sécurisé par Stripe</h4>
-                <p>Après validation de vos informations, vous serez redirigé vers notre page de paiement sécurisée</p>
-            </div>
-
-            <form id="ultraForm">
-                <input type="hidden" name="plan" value="ultra">
-                <input type="hidden" name="price" value="29900"> <!-- Prix en centimes pour Stripe -->
-                <input type="hidden" name="setup_fee" value="70000"> <!-- Frais d'installation en centimes -->
-                
-                <div class="form-group">
-                    <label for="nom_ultra">Nom complet <span class="required">*</span></label>
-                    <input type="text" id="nom_ultra" name="nom" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email_ultra">Email professionnel <span class="required">*</span></label>
-                    <input type="email" id="email_ultra" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="telephone_ultra">Téléphone <span class="required">*</span></label>
-                    <input type="tel" id="telephone_ultra" name="telephone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="entreprise_ultra">Nom de l'entreprise <span class="required">*</span></label>
-                    <input type="text" id="entreprise_ultra" name="entreprise" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="secteur_ultra">Secteur d'activité <span class="required">*</span></label>
-                    <select id="secteur_ultra" name="secteur" required>
-                        <option value="">Sélectionnez votre secteur</option>
-                        <option value="agence">Agence/Marketing</option>
-                        <option value="consultant">Consultant/Coach</option>
-                        <option value="ecommerce">E-commerce</option>
-                        <option value="saas">SaaS/Tech</option>
-                        <option value="service_b2b">Services B2B</option>
-                        <option value="immobilier">Immobilier</option>
-                        <option value="formation">Formation/Éducation</option>
-                        <option value="autre">Autre</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="site_web_ultra">Site web principal <span class="required">*</span></label>
-                    <input type="url" id="site_web_ultra" name="site_web" placeholder="https://votre-site.com" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="processus_actuels">Décrivez vos processus commerciaux actuels <span class="required">*</span></label>
-                    <textarea id="processus_actuels" name="processus_actuels" rows="4" placeholder="Comment gérez-vous actuellement vos leads, RDV, suivi clients..." required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="objectifs_ultra">Objectifs business et défis actuels <span class="required">*</span></label>
-                    <textarea id="objectifs_ultra" name="objectifs" rows="4" placeholder="Quels sont vos principaux défis ? Objectifs de croissance ? Processus à automatiser ?" required></textarea>
-                </div>
-                
-                <div class="loading-spinner" id="ultraSpinner"></div>
-                <button type="submit" class="submit-btn" id="ultraSubmitBtn">
-                    <i class="fas fa-lock"></i> Procéder au paiement sécurisé
-                </button>
-            </form>
-        </div>
-    </div>
+    <!-- Modals vides pour éviter les erreurs JS -->
+    <div id="liteModal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('liteModal')">&times;</span><p>Formulaire en construction...</p></div></div>
+    <div id="ultraModal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('ultraModal')">&times;</span><p>Formulaire en construction...</p></div></div>
 
     <script>
         // Configuration des Payment Links Stripe
         const paymentLinks = {
-            lite: 'https://buy.stripe.com/test_7sY3cxfFmfJBfOn8AFabK00', // Temporaire pour test
-            premium: 'https://buy.stripe.com/test_7sY3cxfFmfJBfOn8AFabK00', // Votre lien de test Premium
-            ultra: 'https://buy.stripe.com/test_7sY3cxfFmfJBfOn8AFabK00' // Temporaire pour test
+            premium: 'https://buy.stripe.com/test_7sY3cxfFmfJBfOn8AFabK00'
         };
 
         // Modal Functions
@@ -1174,6 +1099,12 @@
             }
         }
 
+        // Fonction pour collecter les checkboxes sélectionnées
+        function getSelectedCheckboxes(name) {
+            const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+            return Array.from(checkboxes).map(cb => cb.value).join(', ');
+        }
+
         // Fonction pour envoyer les données par email et rediriger vers Payment Link
         async function submitFormAndPay(formData, plan) {
             try {
@@ -1184,64 +1115,29 @@
                 document.getElementById(btnId).disabled = true;
                 document.getElementById(btnId).innerHTML = 'Envoi des informations...';
 
-                // Préparer les données pour l'email
-                const installationData = {
-                    plan: formData.get('plan'),
-                    nom: formData.get('nom'),
-                    email: formData.get('email'),
-                    telephone: formData.get('telephone'),
-                    entreprise: formData.get('entreprise'),
-                    secteur: formData.get('secteur'),
-                    site_web: formData.get('site_web') || 'Non renseigné',
-                    objectifs: formData.get('objectifs'),
-                    services: formData.get('services') || 'Non renseigné',
-                    processus_actuels: formData.get('processus_actuels') || 'Non renseigné',
-                    timestamp: new Date().toLocaleString('fr-FR')
-                };
+                // Collecter les données des checkboxes
+                const canauxSelectionnes = getSelectedCheckboxes('canaux');
+                const messagesIASelectionnes = getSelectedCheckboxes('messages_ia');
 
-                // Envoyer les données à Formspree - Format classique
-                const formData = new FormData();
-                formData.append('_subject', `🚀 Nouvelle commande Closify - Plan ${plan.toUpperCase()}`);
-                formData.append('plan', installationData.plan);
-                formData.append('nom', installationData.nom);
-                formData.append('email', installationData.email);
-                formData.append('telephone', installationData.telephone);
-                formData.append('entreprise', installationData.entreprise);
-                formData.append('secteur', installationData.secteur);
-                formData.append('site_web', installationData.site_web);
-                formData.append('objectifs', installationData.objectifs);
-                formData.append('services', installationData.services);
-                formData.append('processus_actuels', installationData.processus_actuels);
-                formData.append('timestamp', installationData.timestamp);
-                formData.append('message', `
-NOUVELLE COMMANDE CLOSIFY
-========================
+                // Préparer les données pour Formspree
+                const formDataToSend = new FormData();
+                formDataToSend.append('_subject', `🚀 NOUVELLE COMMANDE CLOSIFY - Plan ${plan.toUpperCase()}`);
+                formDataToSend.append('nom', formData.get('nom'));
+                formDataToSend.append('email', formData.get('email'));
+                formDataToSend.append('telephone', formData.get('telephone'));
+                formDataToSend.append('entreprise', formData.get('entreprise'));
+                formDataToSend.append('site_web', formData.get('site_web') || 'Non renseigné');
+                formDataToSend.append('canaux', canauxSelectionnes || 'Aucun sélectionné');
+                formDataToSend.append('activite', formData.get('activite'));
+                formDataToSend.append('messages_ia', messagesIASelectionnes || 'Aucun sélectionné');
+                formDataToSend.append('horaires', formData.get('horaires'));
+                formDataToSend.append('interdictions', formData.get('interdictions') || 'Aucune restriction');
+                formDataToSend.append('objections', formData.get('objections') || 'Non renseigné');
 
-📋 INFORMATIONS CLIENT:
-- Nom: ${installationData.nom}
-- Email: ${installationData.email}
-- Téléphone: ${installationData.telephone}
-- Entreprise: ${installationData.entreprise}
-
-💼 DÉTAILS BUSINESS:
-- Secteur: ${installationData.secteur}
-- Site web: ${installationData.site_web}
-- Services/Produits: ${installationData.services}
-
-🎯 CONFIGURATION IA:
-- Objectifs: ${installationData.objectifs}
-- Processus actuels: ${installationData.processus_actuels}
-
-📦 PLAN CHOISI: ${plan.toUpperCase()}
-📅 Date commande: ${installationData.timestamp}
-
-⚠️ ATTENTION: Vérifiez le paiement Stripe pour confirmer la commande !
-                `);
-
-                // Envoyer à Formspree avec la méthode classique
+                // Envoyer à Formspree
                 const response = await fetch('https://formspree.io/f/mdkddvve', {
                     method: 'POST',
-                    body: formData,
+                    body: formDataToSend,
                     headers: {
                         'Accept': 'application/json'
                     }
@@ -1273,7 +1169,7 @@ NOUVELLE COMMANDE CLOSIFY
                 }, 1000);
 
                 // Afficher un message de confirmation
-                alert('✅ Informations envoyées avec succès !\n\nVous allez être redirigé vers la page de paiement Stripe.\n\nNous commencerons l\'installation dès réception du paiement.');
+                alert('✅ Informations envoyées avec succès !\n\nVous allez être redirigé vers la page de paiement Stripe.');
 
             } catch (error) {
                 console.error('Erreur:', error);
@@ -1288,24 +1184,14 @@ NOUVELLE COMMANDE CLOSIFY
             }
         }
 
-        // Gestionnaires d'événements pour les formulaires
-        document.getElementById('liteForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            await submitFormAndPay(formData, 'lite');
-        });
-
-        document.getElementById('premiumForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            await submitFormAndPay(formData, 'premium');
-        });
-
-        document.getElementById('ultraForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            await submitFormAndPay(formData, 'ultra');
-        });
+        // Gestionnaire d'événement pour le formulaire Premium
+        if (document.getElementById('premiumForm')) {
+            document.getElementById('premiumForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                await submitFormAndPay(formData, 'premium');
+            });
+        }
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1318,24 +1204,6 @@ NOUVELLE COMMANDE CLOSIFY
                     });
                 }
             });
-        });
-
-        // Add fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card, .pricing-card, .stat-item').forEach(el => {
-            observer.observe(el);
         });
     </script>
 </body>
