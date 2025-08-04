@@ -1202,33 +1202,37 @@
                 const canauxSelectionnes = getSelectedCheckboxes('canaux');
                 const messagesIASelectionnes = getSelectedCheckboxes('messages_ia');
 
-                // Préparer les données pour HighLevel
-                const contactData = {
-                    first_name: formData.get('nom'),
+                // Préparer les données pour Make.com
+                const webhookData = {
+                    nom: formData.get('nom'),
                     email: formData.get('email'),
-                    phone: formData.get('telephone'),
-                    company: formData.get('entreprise'),
-                    website: formData.get('site_web') || '',
-                    source: 'Site Web Closify',
-                    tags: ['Premium', 'Site Web'],
-                    custom_fields: {
-                        canaux: canauxSelectionnes || 'Aucun sélectionné',
-                        activite: formData.get('activite'),
-                        messages_ia: messagesIASelectionnes || 'Aucun sélectionné',
-                        horaires: formData.get('horaires'),
-                        interdictions: formData.get('interdictions') || 'Aucune restriction',
-                        objections: formData.get('objections') || 'Non renseigné',
-                        plan: 'Premium'
-                    }
+                    telephone: formData.get('telephone'),
+                    entreprise: formData.get('entreprise'),
+                    site_web: formData.get('site_web') || '',
+                    canaux: canauxSelectionnes || 'Aucun sélectionné',
+                    activite: formData.get('activite'),
+                    messages_ia: messagesIASelectionnes || 'Aucun sélectionné',
+                    horaires: formData.get('horaires'),
+                    interdictions: formData.get('interdictions') || 'Aucune restriction',
+                    objections: formData.get('objections') || 'Non renseigné',
+                    plan: 'Premium',
+                    timestamp: new Date().toISOString(),
+                    source: 'Site Web Closify'
                 };
 
                 try {
-                    // Envoyer à HighLevel via l'URL du formulaire
-                    const response = await fetch('https://api.leadconnectorhq.com/widget/form/o9jiH3ErdydjmU2XsA27', {
+                    // Envoyer à Make.com webhook
+                    const response = await fetch('https://hook.eu2.make.com/he8j57cjc9yj7kh3pub2d6cgzzmm3n3n', {
                         method: 'POST',
-                        body: formData,
-                        mode: 'no-cors'
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(webhookData)
                     });
+
+                    if (!response.ok) {
+                        throw new Error('Erreur lors de l\'envoi des données');
+                    }
 
                     // Masquer le spinner
                     document.getElementById(spinnerId).style.display = 'none';
@@ -1251,18 +1255,12 @@
 
                 } catch (error) {
                     console.error('Erreur:', error);
+                    alert('❌ Une erreur est survenue lors de l\'envoi des informations.\n\nVeuillez réessayer ou nous contacter directement au 07 71 07 10 98.');
                     
-                    // En cas d'erreur, on redirige quand même vers Stripe
+                    // Masquer le spinner et rétablir le bouton
                     document.getElementById(spinnerId).style.display = 'none';
-                    document.getElementById(btnId).innerHTML = 'Redirection vers le paiement...';
-                    
-                    setTimeout(() => {
-                        window.open(paymentLinks.premium, '_blank');
-                        document.getElementById(btnId).disabled = false;
-                        document.getElementById(btnId).innerHTML = '<i class="fas fa-lock"></i> Procéder au paiement sécurisé';
-                    }, 1000);
-                    
-                    alert('⚠️ Redirection vers le paiement...\n\nNous vous recontacterons pour finaliser votre dossier.');
+                    document.getElementById(btnId).disabled = false;
+                    document.getElementById(btnId).innerHTML = '<i class="fas fa-lock"></i> Procéder au paiement sécurisé';
                 }
             });
         }
