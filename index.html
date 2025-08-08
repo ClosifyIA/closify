@@ -690,6 +690,11 @@
 
         /* MOBILE OPTIMIZATIONS CRITIQUES POUR IPHONE 12 */
         @media (max-width: 768px) {
+            /* Masquer RDV Automatisés sur mobile uniquement */
+            .mobile-hidden {
+                display: none !important;
+            }
+
             /* Header mobile optimisé */
             .header {
                 padding: 0.8rem 0;
@@ -1424,7 +1429,7 @@
                             <h4 style="color: #1CBCCF; margin-bottom: 10px;">Leads Qualifiés</h4>
                             <p style="color: #ccc; font-size: 0.9rem;">+60% conversion</p>
                         </div>
-                        <div class="dashboard-card">
+                        <div class="dashboard-card mobile-hidden">
                             <h4 style="color: #1CBCCF; margin-bottom: 10px;">RDV Automatisés</h4>
                             <p style="color: #ccc; font-size: 0.9rem;">Calendrier intelligent</p>
                         </div>
