@@ -711,21 +711,33 @@
                 // Changer le texte du bouton
                 document.getElementById(btnId).innerHTML = 'Redirection vers le paiement...';
                 
-                // Rediriger vers Stripe après 1 seconde
-                setTimeout(() => {
-                    window.open(paymentLinks[plan], '_blank');
-                    
-                    // Fermer le modal
-                    closeModal(plan + 'Modal');
-                    
-                    // Rétablir le bouton
+                // SOLUTION MOBILE : Redirection directe au lieu de popup
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                
+                if (isMobile) {
+                    // Sur mobile : redirection directe dans la même fenêtre
                     setTimeout(() => {
-                        document.getElementById(btnId).disabled = false;
-                        document.getElementById(btnId).innerHTML = '<i class="fas fa-lock"></i> Procéder au paiement sécurisé';
-                    }, 2000);
-                }, 1000);
-
-                alert('✅ Informations envoyées avec succès !\n\nVous allez être redirigé vers la page de paiement Stripe.');
+                        window.location.href = paymentLinks[plan];
+                    }, 1000);
+                    
+                    alert('✅ Informations envoyées avec succès !\n\nRedirection vers le paiement en cours...');
+                } else {
+                    // Sur desktop : popup comme avant
+                    setTimeout(() => {
+                        window.open(paymentLinks[plan], '_blank');
+                        
+                        // Fermer le modal
+                        closeModal(plan + 'Modal');
+                        
+                        // Rétablir le bouton
+                        setTimeout(() => {
+                            document.getElementById(btnId).disabled = false;
+                            document.getElementById(btnId).innerHTML = '<i class="fas fa-lock"></i> Procéder au paiement sécurisé';
+                        }, 2000);
+                    }, 1000);
+                    
+                    alert('✅ Informations envoyées avec succès !\n\nVous allez être redirigé vers la page de paiement Stripe.');
+                }
 
             } catch (error) {
                 console.error('Erreur détaillée:', error);
@@ -1364,17 +1376,53 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkbox-item:hover {
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .checkbox-item input[type="checkbox"] {
-            width: auto;
+            width: 18px;
+            height: 18px;
             margin: 0;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: #222;
+            border: 2px solid #666;
+            border-radius: 3px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked {
+            background: #1CBCCF;
+            border-color: #1CBCCF;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            font-weight: bold;
+            font-size: 12px;
         }
 
         .checkbox-item label {
             margin: 0;
             font-weight: 400;
             cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
         }
 
         .info-section {
@@ -1746,29 +1794,66 @@
             /* Checkboxes Mobile - 1 COLONNE POUR LISIBILITÉ */
             .checkbox-group {
                 grid-template-columns: 1fr;
-                gap: 0.8rem;
+                gap: 1rem;
             }
 
             .checkbox-item {
                 display: flex;
                 align-items: flex-start;
-                gap: 0.8rem;
-                padding: 0.4rem 0;
+                gap: 1rem;
+                padding: 0.8rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 8px;
+                border: 1px solid #444;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .checkbox-item:hover,
+            .checkbox-item:focus-within {
+                background: rgba(28, 188, 207, 0.1);
+                border-color: #1CBCCF;
             }
 
             .checkbox-item input[type="checkbox"] {
                 margin-top: 0.1rem;
-                width: 18px;
-                height: 18px;
-                min-width: 18px;
+                width: 20px;
+                height: 20px;
+                min-width: 20px;
                 flex-shrink: 0;
+                cursor: pointer;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background: #222;
+                border: 2px solid #666;
+                border-radius: 4px;
+                position: relative;
+            }
+
+            .checkbox-item input[type="checkbox"]:checked {
+                background: #1CBCCF;
+                border-color: #1CBCCF;
+            }
+
+            .checkbox-item input[type="checkbox"]:checked::after {
+                content: '✓';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #000;
+                font-weight: bold;
+                font-size: 14px;
             }
 
             .checkbox-item label {
-                font-size: 0.9rem;
-                line-height: 1.3;
+                font-size: 0.95rem;
+                line-height: 1.4;
                 cursor: pointer;
                 flex: 1;
+                user-select: none;
+                -webkit-user-select: none;
             }
 
             /* Info Sections Mobile */
