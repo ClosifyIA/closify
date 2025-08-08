@@ -666,31 +666,269 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            /* Header mobile */
+            .nav {
+                padding: 0 1rem;
+            }
+            
             .nav-links {
                 display: none;
             }
+            
+            .logo {
+                height: 35px;
+            }
+            
+            .cta-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
 
+            /* Hero mobile */
+            .hero {
+                padding: 6rem 0 4rem;
+                min-height: auto;
+            }
+            
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 2rem;
+                padding: 0 1rem;
             }
 
             .hero-text h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-stats {
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .stat {
+                min-width: 80px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
             }
 
             .phone-mockup {
                 position: relative;
-                margin: 2rem auto 0;
+                margin: 1rem auto 0;
                 transform: none;
+                width: 250px;
+                height: 500px;
+            }
+            
+            .hero-visual {
+                height: auto;
+            }
+
+            /* Container mobile */
+            .container {
+                padding: 0 1rem;
+            }
+
+            /* Features mobile */
+            .features {
+                padding: 4rem 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .feature-icon {
+                font-size: 2rem;
+            }
+
+            /* Stats mobile */
+            .stats {
+                padding: 4rem 0;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .stat-item .number {
+                font-size: 2.5rem;
+            }
+
+            /* Pricing mobile */
+            .pricing {
+                padding: 4rem 0;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            .pricing-card {
+                padding: 2rem;
+                margin: 0;
             }
 
             .pricing-card.popular {
                 transform: none;
+                border: 2px solid #1CBCCF;
             }
 
             .pricing-card.popular:hover {
-                transform: translateY(-10px);
+                transform: translateY(-5px);
+            }
+            
+            .plan-price {
+                font-size: 2rem;
+            }
+
+            /* CTA Section mobile */
+            .cta-section {
+                padding: 4rem 0;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .cta-section p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            /* Footer mobile */
+            .footer {
+                padding: 3rem 0 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            /* Modal mobile */
+            .modal-content {
+                margin: 2% auto;
+                padding: 2rem;
+                width: 95%;
+                max-width: none;
+                max-height: 90vh;
+                border-radius: 15px;
+            }
+            
+            .form-title {
+                font-size: 1.5rem;
+            }
+            
+            .form-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 0.7rem;
+                font-size: 0.9rem;
+            }
+            
+            .submit-btn {
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+            
+            .close {
+                font-size: 24px;
+                right: 15px;
+                top: 10px;
+            }
+
+            /* Buttons mobile */
+            .plan-btn {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Very small screens (smartphones portrait) */
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .phone-mockup {
+                width: 200px;
+                height: 400px;
+            }
+            
+            .dashboard-card {
+                padding: 15px;
+                margin-bottom: 10px;
+            }
+            
+            .dashboard-card h4 {
+                font-size: 0.9rem;
+            }
+            
+            .dashboard-card p {
+                font-size: 0.8rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-item .number {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Landscape mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero {
+                min-height: 70vh;
+                padding: 4rem 0 2rem;
+            }
+            
+            .phone-mockup {
+                width: 200px;
+                height: 350px;
             }
         }
 
