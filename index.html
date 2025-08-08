@@ -664,346 +664,33 @@
             font-size: 0.9rem;
         }
 
-        /* Mobile Responsive - OPTIMISATIONS UX MOBILE */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            /* Header mobile optimisé */
-            .header {
-                padding: 0.8rem 0;
-            }
-
-            .nav {
-                padding: 0 1rem;
-                flex-wrap: wrap;
-            }
-
-            .logo {
-                height: 35px;
-            }
-
             .nav-links {
                 display: none;
-            }
-
-            .cta-btn {
-                padding: 0.6rem 1.2rem;
-                font-size: 0.9rem;
-            }
-
-            /* Hero section mobile optimisé */
-            .hero {
-                padding-top: 80px;
-                min-height: auto;
             }
 
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
-                padding: 0 1rem;
-                gap: 2rem;
             }
 
             .hero-text h1 {
-                font-size: 2.2rem;
-                line-height: 1.2;
-                margin-bottom: 1rem;
-            }
-
-            .hero-text p {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-                padding: 0 0.5rem;
-            }
-
-            .hero-stats {
-                flex-direction: row;
-                justify-content: space-around;
-                gap: 1rem;
-                margin-top: 1.5rem;
-                margin-bottom: 2rem;
-            }
-
-            .stat {
-                flex: 1;
-                min-width: 80px;
-            }
-
-            .stat-number {
-                font-size: 1.5rem;
-            }
-
-            .stat-label {
-                font-size: 0.8rem;
-            }
-
-            /* Phone mockup mobile optimisé */
-            .hero-visual {
-                height: auto;
-                display: flex;
-                justify-content: center;
-                padding: 1rem 0;
+                font-size: 2.5rem;
             }
 
             .phone-mockup {
                 position: relative;
+                margin: 2rem auto 0;
                 transform: none;
-                width: 260px;
-                height: 480px;
-                margin: 0 auto;
-                right: auto;
-                top: auto;
-            }
-
-            .phone-screen {
-                padding: 20px 15px;
-            }
-
-            .dashboard-card {
-                padding: 15px;
-                margin-bottom: 12px;
-            }
-
-            .dashboard-card h4 {
-                font-size: 0.9rem;
-                margin-bottom: 5px;
-            }
-
-            .dashboard-card p {
-                font-size: 0.8rem;
-            }
-
-            /* Sections mobiles optimisées */
-            .container {
-                padding: 0 1rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 2rem;
-            }
-
-            .features {
-                padding: 4rem 0;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .feature-card {
-                padding: 1.5rem;
-            }
-
-            .feature-icon {
-                font-size: 2rem;
-            }
-
-            .feature-card h3 {
-                font-size: 1.3rem;
-            }
-
-            .feature-card p {
-                font-size: 0.95rem;
-            }
-
-            /* Stats mobile optimisées */
-            .stats {
-                padding: 3rem 0;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-
-            .stat-item {
-                padding: 1rem;
-            }
-
-            .stat-item .number {
-                font-size: 2.2rem;
-            }
-
-            .stat-item .label {
-                font-size: 1rem;
-            }
-
-            /* Pricing mobile optimisé */
-            .pricing {
-                padding: 4rem 0;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                margin-top: 2rem;
-            }
-
-            .pricing-card {
-                padding: 2rem 1.5rem;
-                margin: 0 0.5rem;
             }
 
             .pricing-card.popular {
                 transform: none;
-                margin: 1rem 0.5rem 0;
             }
 
-            .pricing-card.popular:hover,
-            .pricing-card:hover {
-                transform: translateY(-5px);
-            }
-
-            .plan-price {
-                font-size: 2rem;
-            }
-
-            .plan-features {
-                text-align: left;
-            }
-
-            .plan-features li {
-                font-size: 0.9rem;
-                padding: 0.4rem 0;
-            }
-
-            /* CTA Section mobile */
-            .cta-section {
-                padding: 4rem 0;
-            }
-
-            .cta-section h2 {
-                font-size: 1.8rem;
-                padding: 0 1rem;
-            }
-
-            .cta-section p {
-                font-size: 1rem;
-                padding: 0 1rem;
-                margin-bottom: 2rem;
-            }
-
-            /* Footer mobile optimisé */
-            .footer {
-                padding: 3rem 0 2rem;
-            }
-
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-                padding: 0 1rem;
-            }
-
-            .footer-section h3 {
-                font-size: 1.1rem;
-                margin-bottom: 1rem;
-            }
-
-            .footer-section ul li {
-                font-size: 0.9rem;
-            }
-
-            /* Modal mobile optimisé */
-            .modal-content {
-                margin: 2% auto;
-                padding: 2rem 1.5rem;
-                width: 95%;
-                max-height: 90vh;
-            }
-
-            .form-title {
-                font-size: 1.5rem;
-            }
-
-            .form-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .close {
-                font-size: 24px;
-                right: 15px;
-                top: 10px;
-            }
-
-            .form-group {
-                margin-bottom: 1.2rem;
-            }
-
-            .form-group label {
-                font-size: 0.9rem;
-            }
-
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 0.7rem;
-                font-size: 0.9rem;
-            }
-
-            .checkbox-group {
-                grid-template-columns: 1fr;
-                gap: 0.8rem;
-            }
-
-            .checkbox-item {
-                padding: 0.3rem 0;
-            }
-
-            .checkbox-item label {
-                font-size: 0.9rem;
-            }
-
-            .info-section,
-            .payment-info {
-                padding: 0.8rem;
-                margin: 0.8rem 0;
-            }
-
-            .info-section h4,
-            .payment-info h4 {
-                font-size: 0.9rem;
-            }
-
-            .info-section p,
-            .payment-info p {
-                font-size: 0.8rem;
-            }
-
-            .submit-btn {
-                font-size: 1rem;
-                padding: 0.9rem;
-            }
-        }
-
-        /* Optimisations pour très petits écrans */
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 1.9rem;
-            }
-
-            .hero-text p {
-                font-size: 0.95rem;
-            }
-
-            .phone-mockup {
-                width: 220px;
-                height: 420px;
-            }
-
-            .section-title {
-                font-size: 1.6rem;
-            }
-
-            .pricing-card {
-                margin: 0;
-            }
-
-            .pricing-card.popular {
-                margin: 1rem 0 0;
-            }
-
-            .modal-content {
-                padding: 1.5rem 1rem;
+            .pricing-card.popular:hover {
+                transform: translateY(-10px);
             }
         }
 
@@ -1076,12 +763,12 @@
                             <p style="color: #ccc; font-size: 0.9rem;">+60% conversion</p>
                         </div>
                         <div class="dashboard-card">
-                            <h4 style="color: #1CBCCF; margin-bottom: 10px;">Multi-Canal</h4>
-                            <p style="color: #ccc; font-size: 0.9rem;">WhatsApp, Email, SMS</p>
+                            <h4 style="color: #1CBCCF; margin-bottom: 10px;">RDV Automatisés</h4>
+                            <p style="color: #ccc; font-size: 0.9rem;">Calendrier intelligent</p>
                         </div>
                         <div class="dashboard-card">
-                            <h4 style="color: #1CBCCF; margin-bottom: 10px;">Calendrier</h4>
-                            <p style="color: #ccc; font-size: 0.9rem;">Gestion intelligente</p>
+                            <h4 style="color: #1CBCCF; margin-bottom: 10px;">Multi-Canal</h4>
+                            <p style="color: #ccc; font-size: 0.9rem;">WhatsApp, Email, SMS</p>
                         </div>
                     </div>
                 </div>
@@ -1302,195 +989,7 @@
                     <label>Canaux à connecter <span class="required">*</span></label>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
-                            <input type="checkbox" id="presentation_ultra" name="messages_ia" value="Présentation de l'offre">
-                            <label for="presentation_ultra">Présentation de l'offre</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="demandes_ultra" name="messages_ia" value="Traitement demandes clients">
-                            <label for="demandes_ultra">Traitement demandes clients</label>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="horaires_ultra">Quels sont vos horaires d'ouverture ? <span class="required">*</span></label>
-                    <textarea id="horaires_ultra" name="horaires" rows="2" required placeholder="Lun-Ven: 9h-18h, Sam: 9h-16h, Dim: Fermé"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="interdictions_ultra">Y a-t-il des choses que l'IA ne doit pas dire ou pas faire ?</label>
-                    <textarea id="interdictions_ultra" name="interdictions" rows="2" placeholder="Ex: Ne pas donner de prix par téléphone, ne pas prendre de RDV le dimanche..."></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="objections_ultra">Quels sont les messages types ou objections que vous recevez souvent ?</label>
-                    <textarea id="objections_ultra" name="objections" rows="3" placeholder="Ex: 'C'est trop cher', 'Vous êtes où ?', 'Vous faites quoi exactement ?'..."></textarea>
-                </div>
-                
-                <div class="info-section">
-                    <h4><i class="fas fa-info-circle"></i> Accès aux comptes nécessaires</h4>
-                    <p>Après votre paiement, vous recevrez un email sécurisé pour nous transmettre les accès à vos comptes (WhatsApp Business, Facebook, etc.). Ces informations sont indispensables pour connecter vos canaux à votre assistant IA.</p>
-                </div>
-
-                <div class="payment-info">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Important - Pop-ups</h4>
-                    <p>Si une nouvelle page ne s'ouvre pas automatiquement après avoir cliqué sur "Procéder au paiement", veuillez autoriser les pop-ups dans votre navigateur et cliquer à nouveau sur le bouton.</p>
-                </div>
-                
-                <div class="loading-spinner" id="ultraSpinner"></div>
-                <button type="submit" class="submit-btn" id="ultraSubmitBtn">
-                    <i class="fas fa-lock"></i> Procéder au paiement sécurisé
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        // Configuration des Payment Links Stripe
-        const paymentLinks = {
-            lite: 'https://buy.stripe.com/14A5kFbnrgMC3gE82EgrS01',
-            premium: 'https://buy.stripe.com/bJecN739fjbsi6sQfv6grS02',
-            ultra: 'https://buy.stripe.com/cNi8wRajn53U04s2IkgrS00'
-        };
-
-        // Modal Functions
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // Fonction pour collecter les checkboxes sélectionnées
-        function getSelectedCheckboxes(name) {
-            const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
-            return Array.from(checkboxes).map(cb => cb.value).join(', ');
-        }
-
-        // Fonction générique pour traiter les formulaires
-        async function submitFormAndPay(formData, plan) {
-            try {
-                // Afficher le spinner
-                const spinnerId = plan + 'Spinner';
-                const btnId = plan + 'SubmitBtn';
-                document.getElementById(spinnerId).style.display = 'block';
-                document.getElementById(btnId).disabled = true;
-                document.getElementById(btnId).innerHTML = 'Envoi des informations...';
-
-                // Collecter les données des checkboxes
-                const canauxSelectionnes = getSelectedCheckboxes('canaux');
-                const messagesIASelectionnes = getSelectedCheckboxes('messages_ia');
-
-                // Préparer les données pour Make.com
-                const webhookData = {
-                    nom: formData.get('nom'),
-                    email: formData.get('email'),
-                    telephone: formData.get('telephone'),
-                    entreprise: formData.get('entreprise'),
-                    site_web: formData.get('site_web') || '',
-                    canaux: canauxSelectionnes || 'Aucun sélectionné',
-                    activite: formData.get('activite'),
-                    messages_ia: messagesIASelectionnes || 'Aucun sélectionné',
-                    horaires: formData.get('horaires'),
-                    interdictions: formData.get('interdictions') || 'Aucune restriction',
-                    objections: formData.get('objections') || 'Non renseigné',
-                    plan: plan.charAt(0).toUpperCase() + plan.slice(1),
-                    timestamp: new Date().toISOString(),
-                    source: 'Site Web Closify'
-                };
-
-                console.log(`Envoi des données ${plan} vers Make.com:`, webhookData);
-                
-                // Envoyer à Make.com webhook
-                const response = await fetch('https://hook.eu2.make.com/he8j57cjc9yj7kh3pub2d6cgzzmm3n3n', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(webhookData)
-                });
-
-                console.log('Réponse du webhook:', response.status, response.statusText);
-
-                if (!response.ok) {
-                    throw new Error(`Erreur webhook: ${response.status} ${response.statusText}`);
-                }
-
-                console.log('Données envoyées avec succès !');
-
-                // Masquer le spinner
-                document.getElementById(spinnerId).style.display = 'none';
-                
-                // Changer le texte du bouton
-                document.getElementById(btnId).innerHTML = 'Redirection vers le paiement...';
-                
-                // Rediriger vers Stripe après 1 seconde
-                setTimeout(() => {
-                    window.open(paymentLinks[plan], '_blank');
-                    
-                    // Fermer le modal
-                    closeModal(plan + 'Modal');
-                    
-                    // Rétablir le bouton
-                    setTimeout(() => {
-                        document.getElementById(btnId).disabled = false;
-                        document.getElementById(btnId).innerHTML = '<i class="fas fa-lock"></i> Procéder au paiement sécurisé';
-                    }, 2000);
-                }, 1000);
-
-                alert('✅ Informations envoyées avec succès !\n\nVous allez être redirigé vers la page de paiement Stripe.');
-
-            } catch (error) {
-                console.error('Erreur détaillée:', error);
-                alert(`❌ Erreur: ${error.message}\n\nVeuillez réessayer ou nous contacter directement au 07 71 07 10 98.`);
-                
-                // Masquer le spinner et rétablir le bouton
-                const spinnerId = plan + 'Spinner';
-                const btnId = plan + 'SubmitBtn';
-                document.getElementById(spinnerId).style.display = 'none';
-                document.getElementById(btnId).disabled = false;
-                document.getElementById(btnId).innerHTML = '<i class="fas fa-lock"></i> Procéder au paiement sécurisé';
-            }
-        }
-
-        // Gestionnaires d'événements pour tous les formulaires
-        ['lite', 'premium', 'ultra'].forEach(plan => {
-            const formElement = document.getElementById(plan + 'Form');
-            if (formElement) {
-                formElement.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    const formData = new FormData(this);
-                    await submitFormAndPay(formData, plan);
-                });
-            }
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>d="whatsapp_lite" name="canaux" value="WhatsApp">
+                            <input type="checkbox" id="whatsapp_lite" name="canaux" value="WhatsApp">
                             <label for="whatsapp_lite">WhatsApp</label>
                         </div>
                         <div class="checkbox-item">
@@ -1801,4 +1300,192 @@
                             <label for="horaires_ultra">Informations horaires</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" i
+                            <input type="checkbox" id="presentation_ultra" name="messages_ia" value="Présentation de l'offre">
+                            <label for="presentation_ultra">Présentation de l'offre</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="demandes_ultra" name="messages_ia" value="Traitement demandes clients">
+                            <label for="demandes_ultra">Traitement demandes clients</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="horaires_ultra">Quels sont vos horaires d'ouverture ? <span class="required">*</span></label>
+                    <textarea id="horaires_ultra" name="horaires" rows="2" required placeholder="Lun-Ven: 9h-18h, Sam: 9h-16h, Dim: Fermé"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="interdictions_ultra">Y a-t-il des choses que l'IA ne doit pas dire ou pas faire ?</label>
+                    <textarea id="interdictions_ultra" name="interdictions" rows="2" placeholder="Ex: Ne pas donner de prix par téléphone, ne pas prendre de RDV le dimanche..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="objections_ultra">Quels sont les messages types ou objections que vous recevez souvent ?</label>
+                    <textarea id="objections_ultra" name="objections" rows="3" placeholder="Ex: 'C'est trop cher', 'Vous êtes où ?', 'Vous faites quoi exactement ?'..."></textarea>
+                </div>
+                
+                <div class="info-section">
+                    <h4><i class="fas fa-info-circle"></i> Accès aux comptes nécessaires</h4>
+                    <p>Après votre paiement, vous recevrez un email sécurisé pour nous transmettre les accès à vos comptes (WhatsApp Business, Facebook, etc.). Ces informations sont indispensables pour connecter vos canaux à votre assistant IA.</p>
+                </div>
+
+                <div class="payment-info">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Important - Pop-ups</h4>
+                    <p>Si une nouvelle page ne s'ouvre pas automatiquement après avoir cliqué sur "Procéder au paiement", veuillez autoriser les pop-ups dans votre navigateur et cliquer à nouveau sur le bouton.</p>
+                </div>
+                
+                <div class="loading-spinner" id="ultraSpinner"></div>
+                <button type="submit" class="submit-btn" id="ultraSubmitBtn">
+                    <i class="fas fa-lock"></i> Procéder au paiement sécurisé
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Configuration des Payment Links Stripe
+        const paymentLinks = {
+            lite: 'https://buy.stripe.com/14A5kFbnrgMC3gE82EgrS01',
+            premium: 'https://buy.stripe.com/bJecN79fjbsi6sQfv6grS02',
+            ultra: 'https://buy.stripe.com/cNi8wRajn53U04s2IkgrS00'
+        };
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Fonction pour collecter les checkboxes sélectionnées
+        function getSelectedCheckboxes(name) {
+            const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+            return Array.from(checkboxes).map(cb => cb.value).join(', ');
+        }
+
+        // Fonction générique pour traiter les formulaires
+        async function submitFormAndPay(formData, plan) {
+            try {
+                // Afficher le spinner
+                const spinnerId = plan + 'Spinner';
+                const btnId = plan + 'SubmitBtn';
+                document.getElementById(spinnerId).style.display = 'block';
+                document.getElementById(btnId).disabled = true;
+                document.getElementById(btnId).innerHTML = 'Envoi des informations...';
+
+                // Collecter les données des checkboxes
+                const canauxSelectionnes = getSelectedCheckboxes('canaux');
+                const messagesIASelectionnes = getSelectedCheckboxes('messages_ia');
+
+                // Préparer les données pour Make.com
+                const webhookData = {
+                    nom: formData.get('nom'),
+                    email: formData.get('email'),
+                    telephone: formData.get('telephone'),
+                    entreprise: formData.get('entreprise'),
+                    site_web: formData.get('site_web') || '',
+                    canaux: canauxSelectionnes || 'Aucun sélectionné',
+                    activite: formData.get('activite'),
+                    messages_ia: messagesIASelectionnes || 'Aucun sélectionné',
+                    horaires: formData.get('horaires'),
+                    interdictions: formData.get('interdictions') || 'Aucune restriction',
+                    objections: formData.get('objections') || 'Non renseigné',
+                    plan: plan.charAt(0).toUpperCase() + plan.slice(1),
+                    timestamp: new Date().toISOString(),
+                    source: 'Site Web Closify'
+                };
+
+                console.log(`Envoi des données ${plan} vers Make.com:`, webhookData);
+                
+                // Envoyer à Make.com webhook
+                const response = await fetch('https://hook.eu2.make.com/he8j57cjc9yj7kh3pub2d6cgzzmm3n3n', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(webhookData)
+                });
+
+                console.log('Réponse du webhook:', response.status, response.statusText);
+
+                if (!response.ok) {
+                    throw new Error(`Erreur webhook: ${response.status} ${response.statusText}`);
+                }
+
+                console.log('Données envoyées avec succès !');
+
+                // Masquer le spinner
+                document.getElementById(spinnerId).style.display = 'none';
+                
+                // Changer le texte du bouton
+                document.getElementById(btnId).innerHTML = 'Redirection vers le paiement...';
+                
+                // Rediriger vers Stripe après 1 seconde
+                setTimeout(() => {
+                    window.open(paymentLinks[plan], '_blank');
+                    
+                    // Fermer le modal
+                    closeModal(plan + 'Modal');
+                    
+                    // Rétablir le bouton
+                    setTimeout(() => {
+                        document.getElementById(btnId).disabled = false;
+                        document.getElementById(btnId).innerHTML = '<i class="fas fa-lock"></i> Procéder au paiement sécurisé';
+                    }, 2000);
+                }, 1000);
+
+                alert('✅ Informations envoyées avec succès !\n\nVous allez être redirigé vers la page de paiement Stripe.');
+
+            } catch (error) {
+                console.error('Erreur détaillée:', error);
+                alert(`❌ Erreur: ${error.message}\n\nVeuillez réessayer ou nous contacter directement au 07 71 07 10 98.`);
+                
+                // Masquer le spinner et rétablir le bouton
+                const spinnerId = plan + 'Spinner';
+                const btnId = plan + 'SubmitBtn';
+                document.getElementById(spinnerId).style.display = 'none';
+                document.getElementById(btnId).disabled = false;
+                document.getElementById(btnId).innerHTML = '<i class="fas fa-lock"></i> Procéder au paiement sécurisé';
+            }
+        }
+
+        // Gestionnaires d'événements pour tous les formulaires
+        ['lite', 'premium', 'ultra'].forEach(plan => {
+            const formElement = document.getElementById(plan + 'Form');
+            if (formElement) {
+                formElement.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(this);
+                    await submitFormAndPay(formData, plan);
+                });
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
